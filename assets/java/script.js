@@ -12,6 +12,14 @@ async function getStatus(e) {
 
     if (response.ok) {
         console.log(data.expiry)
-    }
-    
+    } else {
+        throw new Error(data.error);
+    }  
+} 
+
+function displaySatus(data) {
+    document.getElementById("resultsModalTitle").innerText = heading;
+    document.getElementById("results-content").innerHTML = results;
+    resultsModal.show()
+
 }
